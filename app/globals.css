@@ -3,24 +3,47 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #6366f1;
+  --accent-soft: #eef2ff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #09090b;
+    --foreground: #f4f4f5;
+    --accent: #818cf8;
+    --accent-soft: rgba(99, 102, 241, 0.12);
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+.spotlight {
+  background:
+    radial-gradient(560px circle at 15% 0%, var(--accent-soft), transparent 60%),
+    radial-gradient(480px circle at 85% 10%, var(--accent-soft), transparent 55%);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, currentColor 1px, transparent 1px),
+    linear-gradient(to bottom, currentColor 1px, transparent 1px);
+  background-size: 44px 44px;
 }
