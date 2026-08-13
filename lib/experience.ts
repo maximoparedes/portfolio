@@ -16,3 +16,19 @@ export const experience: ExperienceItem[] = [
     ],
   },
 ];
+
+export type EducationItem = {
+  institution: string;
+  degree: string;
+  period: string;
+  note: string;
+};
+
+export const education: EducationItem[] = [
+  {
+    institution: "UADE",
+    degree: "Ingeniería en Informática",
+    period: "2024 — Actualidad",
+    note: "Cursando 3er año",
+  },
+];

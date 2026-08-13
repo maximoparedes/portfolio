@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ShieldCheck } from "lucide-react";
-import { experience } from "@/lib/experience";
+import { GraduationCap, ShieldCheck } from "lucide-react";
+import { education, experience } from "@/lib/experience";
 
 export function Experience() {
   return (
@@ -52,6 +52,38 @@ export function Experience() {
                 </li>
               ))}
             </ul>
+          </motion.div>
+        ))}
+
+        {education.map((edu, index) => (
+          <motion.div
+            key={edu.institution}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{
+              duration: 0.5,
+              delay: (experience.length + index) * 0.08,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 rounded-2xl border border-zinc-200 bg-white p-7 sm:p-8 dark:border-zinc-800 dark:bg-zinc-900/40"
+          >
+            <div className="flex items-center gap-3.5">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-soft text-accent">
+                <GraduationCap className="h-5 w-5" strokeWidth={1.75} />
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold tracking-tight text-zinc-900 dark:text-white">
+                  {edu.degree}
+                </h3>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                  {edu.institution} · {edu.note}
+                </p>
+              </div>
+            </div>
+            <span className="shrink-0 rounded-full border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
+              {edu.period}
+            </span>
           </motion.div>
         ))}
       </div>
