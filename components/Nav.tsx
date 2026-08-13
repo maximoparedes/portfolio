@@ -12,6 +12,12 @@ export function Nav() {
         </a>
         <nav className="flex items-center gap-6">
           <a
+            href="#experiencia"
+            className="hidden text-sm text-zinc-600 transition-colors hover:text-zinc-900 sm:inline dark:text-zinc-400 dark:hover:text-white"
+          >
+            Experiencia
+          </a>
+          <a
             href="#proyectos"
             className="hidden text-sm text-zinc-600 transition-colors hover:text-zinc-900 sm:inline dark:text-zinc-400 dark:hover:text-white"
           >

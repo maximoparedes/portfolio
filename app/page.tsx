@@ -1,5 +1,6 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
+import { Experience } from "@/components/Experience";
 import { ProjectsGrid } from "@/components/ProjectsGrid";
 import { SocialIcons } from "@/components/SocialIcons";
 import { projects } from "@/lib/projects";
@@ -11,7 +12,9 @@ export default function Home() {
       <Hero />
 
       <main className="mx-auto w-full max-w-4xl flex-1 px-6 py-24 sm:px-8">
-        <section id="proyectos" className="scroll-mt-20">
+        <Experience />
+
+        <section id="proyectos" className="mt-24 scroll-mt-20">
           <div className="mb-10 flex items-end justify-between">
             <div>
               <p className="text-sm font-medium text-accent">Selección</p>

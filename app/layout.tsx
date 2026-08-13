@@ -12,15 +12,33 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://portfolio-phi-self-29.vercel.app";
+const TITLE = "Máximo Paredes — Portfolio";
+const DESCRIPTION = "Proyectos de desarrollo full-stack, IA y automatización.";
+
 export const metadata: Metadata = {
-  title: "Máximo Paredes — Portfolio",
-  description: "Proyectos de desarrollo full-stack, IA y automatización.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: TITLE,
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="en"
+      lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>

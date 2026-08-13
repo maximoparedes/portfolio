@@ -1,10 +1,11 @@
 import type { LucideIcon } from "lucide-react";
-import { Bot, GraduationCap, Receipt, Wallet } from "lucide-react";
+import { Bot, GraduationCap, Receipt, ShieldCheck, Wallet } from "lucide-react";
 
 export type Project = {
   title: string;
   period: string;
   icon: LucideIcon;
+  image?: string;
   description: string;
   highlights: string[];
   stack: string[];
@@ -16,6 +17,7 @@ export const projects: Project[] = [
     title: "Recibos Monotributo",
     period: "2026",
     icon: Receipt,
+    image: "/screenshots/recibos-monotributo.jpg",
     description:
       "Aplicación full-stack para generar comprobantes en PDF para monotributistas, con autenticación de usuarios y persistencia en base de datos. Deployada en producción con CI/CD automático.",
     highlights: [
@@ -49,6 +51,7 @@ export const projects: Project[] = [
     title: "GastosApp",
     period: "2026",
     icon: Wallet,
+    image: "/screenshots/gastosapp.jpg",
     description:
       "Dashboard personal de seguimiento de gastos con visualizaciones de datos y control de presupuesto por categoría, con persistencia local en el navegador.",
     highlights: [
@@ -58,6 +61,22 @@ export const projects: Project[] = [
     ],
     stack: ["Next.js 16", "TypeScript", "Tailwind CSS v4", "Recharts", "Zod"],
     links: [],
+  },
+  {
+    title: "Barrio Novedades",
+    period: "2026",
+    icon: ShieldCheck,
+    description:
+      "Sistema de clasificación automática de novedades de seguridad para un barrio privado, construido con workflows de n8n integrados con OpenAI (texto y visión).",
+    highlights: [
+      "Clasificación automática de mensajes en Incidente, Control rutinario o Conversacional, con extracción de unidad funcional y validación de áreas contra una lista cerrada",
+      "Ruteo condicional entre modelo de texto y modelo de visión según si el mensaje incluye foto, optimizando el costo por mensaje procesado",
+      "Iteración de prompts documentada con métricas de precisión propias, pasando de 87.5% a 100% de acierto en los casos clave",
+    ],
+    stack: ["n8n", "OpenAI API", "Docker", "Prompt Engineering"],
+    links: [
+      { label: "Código fuente", href: "https://github.com/maximoparedes/barrio-novedades", primary: true },
+    ],
   },
   {
     title: "UADE Tracker",
